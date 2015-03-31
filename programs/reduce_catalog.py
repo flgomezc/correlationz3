@@ -14,7 +14,7 @@ Data.close()
 
 ### Create Random Field Catalog
 
-RFCatalog = open('../data/RandomFieldCatalog.cvs', 'w')
+RFCatalog = open('../data/RandomFieldCatalog.csv', 'w')
 random.seed(0)
 BoxLength = 250 # Mpc h^-1
 M = 1      ### M times the number of data points

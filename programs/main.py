@@ -33,7 +33,7 @@ RunningLog.write("Distance Bins =\n"+str(dist)+'\n\n')
 
 T_start_RandomField = timeit.default_timer()
 #### Create Random Field
-RandomField = np.loadtxt('../data/RandomFieldCatalog.cvs', delimiter=',', usecols=[0,1,2])
+RandomField = np.loadtxt('../data/RandomFieldCatalog.csv', delimiter=',', usecols=[0,1,2])
 Nrand = RandomField[:,0].shape[0]
 RunningLog.write('N random ='+str(Nrand)+'\n\n')
 print 'RandomField', RandomField.shape
