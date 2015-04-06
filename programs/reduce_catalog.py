@@ -4,7 +4,7 @@ import timeit
 
 Catalog = np.loadtxt('../data/BolshoiP_bdmV.csv', skiprows=1, delimiter=',',
                         usecols=[3,4,5,6])
-index = np.where(Catalog[:,3]>5*10**10)
+index = np.where(Catalog[:,3]>=10**11.0566)[0]
 SmallCatalog = np.array(Catalog[index])
 Data = open('../data/SmallCatalog.csv', 'w')
 for line in SmallCatalog:
@@ -17,7 +17,7 @@ Data.close()
 RFCatalog = open('../data/RandomFieldCatalog.csv', 'w')
 random.seed(0)
 BoxLength = 250 # Mpc h^-1
-M = 1      ### M times the number of data points
+M = 3      ### M times the number of data points
 Ndata=SmallCatalog[:,0].shape[0]
 Nrand=int(M*Ndata)
 
