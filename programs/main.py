@@ -5,9 +5,12 @@ random.seed(0)
 
 T_start_global = timeit.default_timer()
 
+print 'Loading running.log'
 RunningLog = open('running.log', 'w')
 
+
 T_start_loading = timeit.default_timer()
+print 'Loading Small Catalog'
 Data = np.loadtxt('../data/SmallCatalog.csv', delimiter=',', usecols=[0,1,2])
 T_stop_loading = timeit.default_timer()
 
@@ -28,11 +31,12 @@ counterDR = np.zeros(Bins-1)
 counterRR = np.zeros(Bins-1)
 
 RunningLog.write("Distance Bins =\n"+str(dist)+'\n\n')
-
+print ' Loading Bins '
 
 
 T_start_RandomField = timeit.default_timer()
 #### Create Random Field
+print 'Loading Random Field'
 RandomField = np.loadtxt('../data/RandomFieldCatalog.csv', delimiter=',', usecols=[0,1,2])
 Nrand = RandomField[:,0].shape[0]
 RunningLog.write('N random ='+str(Nrand)+'\n\n')
@@ -42,6 +46,7 @@ RunningLog.write('Loading RandomField: '+str(T_stop_RandomField - T_start_Random
 RunningLog.write('RandomField.shape =' +str(RandomField.shape)+'\n')
 
 
+print 'Counting RANDOM-RANDOM'
 T_start_Countig_RR = timeit.default_timer()
 matrix = np.zeros([Nrand,7])
 for k in range(3):
@@ -66,7 +71,7 @@ RunningLog.write('Random-Random counting time = '+
 print 'RR counting time: ', T_stop_Counting_RR - T_start_Countig_RR,'s\n'
 
 
-
+print 'Counting DATA-DATA'
 T_start_Countig_DD = timeit.default_timer()
 matrix = np.zeros([Ndata,7])
 for k in range(3):
@@ -90,7 +95,7 @@ RunningLog.write('Data-Data counting time = '+
                   str(T_stop_Counting_DD - T_start_Countig_DD)+'s\n')
 print 'DD counting time: ', T_stop_Counting_DD - T_start_Countig_DD,'s\n'
 
-
+print 'Counting DATA-RANDOM'
 T_start_Countig_DR = timeit.default_timer()
 matrix = np.zeros([Nrand,7])
 for k in range(3):
