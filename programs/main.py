@@ -21,8 +21,8 @@ Ndata=Data[:,0].shape[0]
 RunningLog.write('N data   ='+str(Ndata)+'\n')
 
 Bins = 16
-dist = 10**(np.linspace(-1.375,2.125,Bins)) ## Bins
-DIST = np.logspace(-2,2,13)                   ## Center of Bins
+dist = 10**(np.linspace(-1.10,2.10,Bins)) ## Bins
+DIST = np.logspace(-1,2,15)                   ## Center of Bins
 counterDD = np.zeros(Bins-1)
 counterDR = np.zeros(Bins-1)
 counterRR = np.zeros(Bins-1)
