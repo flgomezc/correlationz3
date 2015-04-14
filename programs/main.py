@@ -45,7 +45,7 @@ T_stop_RandomField = timeit.default_timer()
 RunningLog.write('Loading RandomField: '+str(T_stop_RandomField - T_start_RandomField )+'s\n')
 RunningLog.write('RandomField.shape =' +str(RandomField.shape)+'\n')
 
-
+"""
 print 'Counting RANDOM-RANDOM'
 T_start_Countig_RR = timeit.default_timer()
 matrix = np.zeros([Nrand,7])
@@ -94,6 +94,7 @@ RunningLog.write('Data-Data counting\nDD = \n'+str(counterDD)+'\n\n')
 RunningLog.write('Data-Data counting time = '+
                   str(T_stop_Counting_DD - T_start_Countig_DD)+'s\n')
 print 'DD counting time: ', T_stop_Counting_DD - T_start_Countig_DD,'s\n'
+"""
 
 print 'Counting DATA-RANDOM'
 T_start_Countig_DR = timeit.default_timer()
