@@ -97,7 +97,7 @@ print 'DD counting time: ', T_stop_Counting_DD - T_start_Countig_DD,'s\n'
 
 print 'Counting DATA-RANDOM'
 T_start_Countig_DR = timeit.default_timer()
-matrix = np.zeros([Nrand,7])
+matrix = np.zeros([Ndata,7])
 for k in range(3):
         matrix[:,k]   = Data[:,k]
 counterDR = np.zeros(Bins-1)
