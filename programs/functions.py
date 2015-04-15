@@ -41,7 +41,7 @@ def Counting_DD():
         for m in range(counterDD.size):
             index = np.where((matrix[:,6]>=dist[m])&(matrix[:,6]<dist[m+1]))[0]
             counterDD[m] += index.shape
-    counterDD = counterDD/( 2*Nrand*(Nrand-1) )
+    counterDD = counterDD/( Ndata*(Ndata-1) )
     T_stop_Counting_DD = timeit.default_timer()
     print 'DD counting time: ', T_stop_Counting_DD - T_start_Countig_DD,'s\n'
     print '\n   DD=\n'
@@ -66,7 +66,7 @@ def Counting_RR():
         for m in range(counterRR.size):
             index = np.where((matrix[:,6]>=dist[m])&(matrix[:,6]<dist[m+1]))[0]
             counterRR[m] += index.shape
-    counterRR = counterRR/( 2*Nrand*(Nrand-1) )
+    counterRR = counterRR/( Nrand*(Nrand-1) )
     T_stop_Counting_RR = timeit.default_timer()
     print 'RR counting time: ', T_stop_Counting_RR - T_start_Countig_RR,'s\n'
     print '\n   RR=\n'
@@ -91,7 +91,7 @@ def Counting_DR():
         for m in range(counterDR.size):
             index = np.where((matrix[:,6]>=dist[m])&(matrix[:,6]<dist[m+1]))[0]
             counterDR[m] += index.shape
-    counterDR = counterDR/( 2*Ndata*Nrand)
+    counterDR = counterDR/( Ndata*Nrand)
     T_stop_Counting_DR = timeit.default_timer()
     print 'DR counting time: ', T_stop_Counting_DR - T_start_Countig_DR,'s\n'
     print '\n   DR=\n'
