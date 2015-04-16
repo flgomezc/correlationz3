@@ -17,7 +17,7 @@ Data.close()
 RFCatalog = open('../data/RandomFieldCatalog.csv', 'w')
 random.seed(0)
 BoxLength = 250 # Mpc h^-1
-M = 3      ### M times the number of data points
+M = 1      ### M times the number of data points
 Ndata=SmallCatalog[:,0].shape[0]
 Nrand=int(M*Ndata)
 
