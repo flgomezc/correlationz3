@@ -28,9 +28,11 @@ def Counting_DD():
     print '\nCounting DATA-DATA'
     T_start_Countig_DD = timeit.default_timer()
     matrix = np.zeros([Ndata,7])
+
     for k in range(3):
             matrix[:,k]   = Data[:,k]
     counterDD = np.zeros(Bins-1)
+
     for line in Data:
         aux = 0
         for k in range(3):
@@ -41,11 +43,18 @@ def Counting_DD():
         for m in range(counterDD.size):
             index = np.where((matrix[:,6]>=dist[m])&(matrix[:,6]<dist[m+1]))[0]
             counterDD[m] += index.shape
+
     counterDD = counterDD/( Ndata*(Ndata-1) )
     T_stop_Counting_DD = timeit.default_timer()
     print 'DD counting time: ', T_stop_Counting_DD - T_start_Countig_DD,'s\n'
     print '\n   DD=\n'
     print counterDD
+
+    file = open('../results/DD.dat', 'w')
+    for i in range(Bins-2):
+        file.write(str(counterDD[i])+',')
+    file.write(str(counterDD[Bins-2])+'\n')
+    file.close()
     return counterDD
 
 def Counting_RR():
@@ -66,11 +75,18 @@ def Counting_RR():
         for m in range(counterRR.size):
             index = np.where((matrix[:,6]>=dist[m])&(matrix[:,6]<dist[m+1]))[0]
             counterRR[m] += index.shape
+
     counterRR = counterRR/( Nrand*(Nrand-1) )
     T_stop_Counting_RR = timeit.default_timer()
     print 'RR counting time: ', T_stop_Counting_RR - T_start_Countig_RR,'s\n'
     print '\n   RR=\n'
     print counterRR
+
+    file = open('../results/RR.dat', 'w')
+    for i in range(Bins-2):
+        file.write(str(counterRR[i])+',')
+    file.write(str(counterRR[Bins-2])+'\n')
+    file.close()
     return counterRR
 
 def Counting_DR():
@@ -96,4 +112,10 @@ def Counting_DR():
     print 'DR counting time: ', T_stop_Counting_DR - T_start_Countig_DR,'s\n'
     print '\n   DR=\n'
     print counterDR
+
+    file = open('../results/DR.dat', 'w')
+    for i in range(Bins-2):
+        file.write(str(counterDR[i])+',')
+    file.write(str(counterDR[Bins-2])+'\n')
+    file.close()
     return counterDR
