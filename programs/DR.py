@@ -5,4 +5,4 @@ import timeit
 from functions import *
 
 
-DR = Counting_DR()
+pDR = Proj_Counting_DR()

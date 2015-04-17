@@ -5,4 +5,4 @@ import timeit
 from functions import *
 
 
-RR = Counting_RR()
+pRR = Proj_Counting_RR()
