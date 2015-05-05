@@ -14,12 +14,12 @@ print DIST
 
 # Loading Catalogs
 print '\nLoading Small Catalog'
-Data = np.loadtxt('../data/SmallCatallog.csv',
+Data = np.loadtxt('../data/SmallCatalog.csv',
                             delimiter=',', usecols=[0,1,2])
 Ndata=Data[:,0].shape[0]
 
 print 'Loading Random Field Catalog'
-RandomField = np.loadtxt('../data/RandomField.csv',
+RandomField = np.loadtxt('../data/RandomFieldCatalog.csv',
                             delimiter=',', usecols=[0,1,2])
 Nrand = RandomField[:,0].shape[0]
 
