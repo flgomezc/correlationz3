@@ -1,5 +1,10 @@
+#  /Conroy%25202006
+# Projected two point correlation function
 # Graph from Conroy 2006, page 5
-# Projected two point correlation function (\omega_p (r_p)) vs (r_p (h-1 Mpc))
+# fig 4. Solid Lines
+# V_{max}^{acc}
+# number density n = 1.5x10-2 h3 Mpc-3
+# r_p(h-1 Mpc), \omega_p ( r_p )
 0.09913	202.9
 0.1104	180.3
 0.1297	153.6
